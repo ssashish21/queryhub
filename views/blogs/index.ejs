@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <header>
+        <div class="container m-10">
+            <a class="btn btn-primary btn-lg" href="/blogs/new">Add new Blog/Query</a>
+        </div>
+    </header>
+
+    <div class="row">
+        <% blogs.forEach(function(blog){ %>
+            <div class="col-md-3 col-sm-6" style="display:flex; flex-wrap: wrap;">
+                <div class="thumbnail text-center">
+                    <div class="caption ">
+                        <h3><b><%= blog.name %></b></h3>
+                        <p><%= blog.description %></p>
+                    </div>
+                    <p><a class="btn btn-primary" href="/blogs/<%= blog._id %>">More Info</a></p>
+                    
+                </div>
+            </div>
+        <% }); %>
+    </div>
+        
+</div>
+<%- include("../partials/footer") %>
+
